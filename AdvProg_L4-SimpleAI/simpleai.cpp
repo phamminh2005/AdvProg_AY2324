@@ -167,6 +167,7 @@ bool isCorrectChar(char ch, const string& mask)
         if (ch == mask[i])
         {
             answer = true;
+            break;
         }
         else
         {
