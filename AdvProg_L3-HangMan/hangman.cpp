@@ -123,7 +123,7 @@ void updateSecretWord(string& secretWord, const char ch, const string& word)
     {
         if (ch == word[i])
         {
-            secretWord[i] == ch;
+            secretWord[i] = ch;
         }
     }
 }
@@ -137,7 +137,7 @@ void updateSecretWord(string& secretWord, const char ch, const string& word)
 ***/
 void updateEnteredChars(const char ch, string& chars){
     // TODO: append the character ch is in end of the text chars
-    chars += ch;
+    chars.push_back(ch);
 }
 
 /***
