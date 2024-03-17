@@ -190,8 +190,15 @@ bool isWholeWord(const string& mask)
     //Write your code here
     for (int i = 0; i < mask.length(); ++i)
     {
-
-     }
+        if (!isalpha(mask[i]))
+        {
+            answer = false;
+        }
+        else
+        {
+            answer = true;
+        }
+    }
     return answer;
 }
 
