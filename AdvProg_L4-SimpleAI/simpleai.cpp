@@ -28,7 +28,7 @@ vector<string> filterWordsByLen(int wordLen, const vector<string>& vocabulary)
 {
     vector<string> answer;
     //Write your code here
-    for (int i = 0; i < vocabulary.length(); i++)
+    for (int i = 0; i < vocabulary.size(); i++)
     {
         if (vocabulary[i].length() == wordLen)
         {
@@ -93,6 +93,7 @@ char findMostFrequentChar(const map<char, int>& occurrences, const set<char>& se
 {
     char answer;
     //Write your code here
+    int maxFrequency = 0;
     for (const auto& pair : occurrences) {
         char currentChar = pair.first;
         int currentFrequency = pair.second;
@@ -255,7 +256,7 @@ vector<string> filterWordsByMask(const vector<string>& words, const string& mask
 {
     vector<string> answer;
     //Write your code here
-    for (int i = 0; i < words.length(); i++)
+    for (int i = 0; i < words.size(); i++)
     {
         if (wordConformToMask(words[i], mask, ch))
         {
