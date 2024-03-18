@@ -76,15 +76,14 @@ void Painter::turnRight(double degree)
 ***/
 void Painter::randomColor()
 {
-    srand(time(NULL));
     // TODO: set random color    
-    int r = rand() % 256;
-    int g = rand() % 256;
-    int b = rand() % 256;
-    int a = rand() % 256;
-    SDL_Color randomColor = { r,g,b,a };
+    Uint8 r = rand() % 256; // Uint8 : Kieu so nguyen khong dau có do dai 8 bit
+    Uint8 g = rand() % 256;
+    Uint8 b = rand() % 256;
+    Uint8 a = rand() % 256;
+    SDL_Color randomColor;
     setColor(randomColor);
-
+   
 }
 
 
