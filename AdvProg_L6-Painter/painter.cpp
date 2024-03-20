@@ -23,7 +23,9 @@ void Painter::setColor(SDL_Color color)
 void Painter::jumpForward(int numPixel)
 {
     // TODO: jump the painter forward
-    
+    int x, y;
+    this->x = x;
+    this->y = y;
     x += numPixel;
     y += numPixel;
 }
@@ -38,6 +40,9 @@ void Painter::jumpForward(int numPixel)
 void Painter::jumpBackward(int numPixel)
 {
     // TODO: jump the painter backward
+    int x, y;
+    this->x = x;
+    this->y = y;
     x -= numPixel;
     y -= numPixel;
 }
@@ -52,6 +57,7 @@ void Painter::jumpBackward(int numPixel)
 void Painter::turnLeft(double degree)
 {
     // TODO: rotate left the painter   
+    this->angle = angle;
     angle -= degree;
 }
 
@@ -65,6 +71,7 @@ void Painter::turnLeft(double degree)
 void Painter::turnRight(double degree)
 {
     // TODO: rotate right the painter   
+    this->angle = angle;
     angle += degree;
 }
 
