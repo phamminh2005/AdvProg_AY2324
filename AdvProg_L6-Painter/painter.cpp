@@ -24,11 +24,7 @@ void Painter::jumpForward(int numPixel)
 {
     // TODO: jump the painter forward
     SDL_Init(SDL_INIT_VIDEO);
-    if (SDL_Init(SDL_INIT_VIDEO) < 0)
-    {
-        cout << "ERROR";
-    }
-    else
+    if (SDL_Init(SDL_INIT_VIDEO) >= 0)
     {
         int x, y;
         this->x = x;
@@ -49,11 +45,7 @@ void Painter::jumpBackward(int numPixel)
 {
     // TODO: jump the painter backward
     SDL_Init(SDL_INIT_VIDEO);
-    if (SDL_Init(SDL_INIT_VIDEO) < 0)
-    {
-        cout << "ERROR";
-    }
-    else
+    if (SDL_Init(SDL_INIT_VIDEO) >= 0)
     {
         int x, y;
         this->x = x;
