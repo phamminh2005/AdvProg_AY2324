@@ -10,8 +10,8 @@ using namespace std;
 void Painter::setColor(SDL_Color color) 
 { 
     // TODO: set the color value for the Painter and set Render Draw Color
-    SDL_Renderer* renderer;
-    SDL_SetRenderDrawColor(renderer, color.r, color.g, color.b,color.a);
+    this->color = color;
+    SDL_SetRenderDrawColor(renderer, color.r, color.g, color.b,0);
 }
 
 
@@ -24,20 +24,9 @@ void Painter::setColor(SDL_Color color)
 void Painter::jumpForward(int numPixel)
 {
     // TODO: jump the painter forward
-    SDL_Init(SDL_INIT_VIDEO);
-
-    if (SDL_Init(SDL_INIT_VIDEO) < 0)
-    {
-        cout << "Error";
-    }
-    else
-    {
-        int x, y;
-        this->x = x;
-        this->y = y;
-        x += numPixel;
-        y += numPixel;
-    }
+    float rad = (angle / 180) * M_PI;
+    x += (cos(rad) * numPixel);
+    y += (sin(rad) *numPixel);
 }
 
 
@@ -50,20 +39,9 @@ void Painter::jumpForward(int numPixel)
 void Painter::jumpBackward(int numPixel)
 {
     // TODO: jump the painter backward
-    SDL_Init(SDL_INIT_VIDEO);
-    
-    if (SDL_Init(SDL_INIT_VIDEO) < 0)
-    {
-        cout << "Error";
-    }
-    else
-    {
-        int x, y;
-        this->x = x;
-        this->y = y;
-        x -= numPixel;
-        y -= numPixel;
-    }
+    float rad = (angle / 180) * M_PI;
+    x -= (cos(rad) * numPixel);
+    y -= (sin(rad) * numPixel);
 }
 
 
