@@ -26,7 +26,7 @@ void Painter::jumpForward(int numPixel)
     this->angle = angle;
     float rad = (angle / 180) * M_PI;
     x += (int) (cos(rad) * numPixel);
-    y += (int) (sin(rad) * numPixel);
+    y -= (int) (sin(rad) * numPixel);
 }
 
 
@@ -42,7 +42,7 @@ void Painter::jumpBackward(int numPixel)
     this->angle = angle;
     float rad = (angle / 180) * M_PI;
     x -= (int) (cos(rad) * numPixel);
-    y -= (int) (sin(rad) * numPixel);
+    y += (int) (sin(rad) * numPixel);
 }
 
 
