@@ -23,8 +23,12 @@ void Painter::setColor(SDL_Color color)
 void Painter::jumpForward(int numPixel)
 {
     // TODO: jump the painter forward
-    SDL_Init(SDL_INIT_EVERYTHING);
-    if (SDL_Init(SDL_INIT_EVERYTHING) > 0);
+    SDL_Init(SDL_INIT_VIDEO);
+    if (SDL_Init(SDL_INIT_VIDEO) < 0)
+    {
+        cout << "ERROR";
+    }
+    else
     {
         int x, y;
         this->x = x;
@@ -44,8 +48,12 @@ void Painter::jumpForward(int numPixel)
 void Painter::jumpBackward(int numPixel)
 {
     // TODO: jump the painter backward
-    SDL_Init(SDL_INIT_EVERYTHING);
-    if (SDL_Init(SDL_INIT_EVERYTHING) > 0);
+    SDL_Init(SDL_INIT_VIDEO);
+    if (SDL_Init(SDL_INIT_VIDEO) < 0)
+    {
+        cout << "ERROR";
+    }
+    else
     {
         int x, y;
         this->x = x;
