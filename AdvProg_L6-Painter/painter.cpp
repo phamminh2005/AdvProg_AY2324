@@ -23,11 +23,15 @@ void Painter::setColor(SDL_Color color)
 void Painter::jumpForward(int numPixel)
 {
     // TODO: jump the painter forward
-    int x, y;
-    this->x = x;
-    this->y = y;
-    x += numPixel;
-    y += numPixel;
+    SDL_Init(SDL_INIT_EVERYTHING);
+    if (SDL_Init(SDL_INIT_EVERYTHING) > 0);
+    {
+        int x, y;
+        this->x = x;
+        this->y = y;
+        x += numPixel;
+        y += numPixel;
+    }
 }
 
 
@@ -40,11 +44,15 @@ void Painter::jumpForward(int numPixel)
 void Painter::jumpBackward(int numPixel)
 {
     // TODO: jump the painter backward
-    int x, y;
-    this->x = x;
-    this->y = y;
-    x -= numPixel;
-    y -= numPixel;
+    SDL_Init(SDL_INIT_EVERYTHING);
+    if (SDL_Init(SDL_INIT_EVERYTHING) > 0);
+    {
+        int x, y;
+        this->x = x;
+        this->y = y;
+        x -= numPixel;
+        y -= numPixel;
+    }
 }
 
 
