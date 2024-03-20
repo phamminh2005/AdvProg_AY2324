@@ -1,6 +1,5 @@
 #include "painter.h"
-#include<iostream>
-using namespace std;
+
 /***
     Args: color (SDL_Color): color value 
         
@@ -24,9 +23,10 @@ void Painter::setColor(SDL_Color color)
 void Painter::jumpForward(int numPixel)
 {
     // TODO: jump the painter forward
+    this->angle = angle;
     float rad = (angle / 180) * M_PI;
     x += (cos(rad) * numPixel);
-    y += (sin(rad) *numPixel);
+    y += (sin(rad) * numPixel);
 }
 
 
@@ -39,6 +39,7 @@ void Painter::jumpForward(int numPixel)
 void Painter::jumpBackward(int numPixel)
 {
     // TODO: jump the painter backward
+    this->angle = angle;
     float rad = (angle / 180) * M_PI;
     x -= (cos(rad) * numPixel);
     y -= (sin(rad) * numPixel);
