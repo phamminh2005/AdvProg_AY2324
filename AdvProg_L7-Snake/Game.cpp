@@ -51,14 +51,14 @@ Game::~Game()
 ***/
 
 void Game::snakeMoveTo(Position pos) {
-	if (!pos.isInsideBox(0, 0, width, height) || squares[pos.y][pos.x] == CELL_SNAKE_BODY) {
+	if (!pos.isInsideBox(0, 0, width, height) || squares[pos.y][pos.x] == CELL_SNAKE) {
 		status = GAME_OVER;
 	} else if (squares[pos.y][pos.x] == CELL_CHERRY) {
 		score++;
 		snake.eatCherry();
 		addCherry();
 	} else {
-		squares[pos.y][pos.x] = CELL_SNAKE_BODY;
+		squares[pos.y][pos.x] = CELL_SNAKE;
 	}
 }
 
