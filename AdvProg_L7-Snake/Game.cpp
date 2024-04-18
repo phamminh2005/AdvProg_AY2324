@@ -51,16 +51,14 @@ Game::~Game()
 ***/
 
 void Game::snakeMoveTo(Position pos) {
-	if(checkPosition(pos) )
-	{
+	if (!pos.isInsideBox(0, 0, width, height) || squares[pos.y][pos.x] == CELL_SNAKE_BODY) {
 		status = GAME_OVER;
-		return;
-	}
-	if(pos == CELL_CHERRY)
-	{
+	} else if (squares[pos.y][pos.x] == CELL_CHERRY) {
 		score++;
 		snake.eatCherry();
 		addCherry();
+	} else {
+		squares[pos.y][pos.x] = CELL_SNAKE_BODY;
 	}
 }
 
@@ -109,11 +107,12 @@ void Game::processUserInput(Direction direction)
  * 
  ***/
 bool Game::canChange(Direction current, Direction next) const {
-	if ((current == UP || current == DOWN) && (next == UP || next ==DOWN)) 
-		return false; // YOUR CODE HERE
-	if((current == RIGHT || current == LEFT) && (next == RIGHT || next = LEFT))
-	return false;// YOUR CODE HERE
-return true;
+	if ((current == UP || current == DOWN) && (next == UP || next == DOWN)) {
+		return false;
+	} else if ((current == LEFT || current == RIGHT) && (next == LEFT || next == RIGHT)) {
+		return false;
+	}
+	return true;
 }
 
 
