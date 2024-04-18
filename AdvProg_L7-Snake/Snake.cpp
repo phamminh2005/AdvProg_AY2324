@@ -25,11 +25,11 @@ Snake::~Snake()
             p = nextNode;
     }
     */
-    for(Snakenode *p = tail;p != nullptr;)
+    for(SnakeNode p = tail;p != nullptr;)
     {
         SnakeNode* nextnode = p->next;
         delete p;
-        p = nextNode;
+        p = nextnode;
     }
 }
 
@@ -61,7 +61,7 @@ void Snake::growAtFront(Position newPosition)
 	
     /* YOUR CODE HERE */
     SnakeNode newHead = new SnakeNode(newPosition);
-    newHead->next = head;
+    newHead -> next = head;
     head = newHead;
 }
 
