@@ -51,7 +51,6 @@ Game::~Game()
 ***/
 
 void Game::snakeMoveTo(Position pos) {
-	void Game::snakeMoveTo(Position pos) {
 	if (!pos.isInsideBox(0, 0, width, height) || squares[pos.y][pos.x] == CELL_SNAKE) {
 		status = GAME_OVER;
 	} else if (squares[pos.y][pos.x] == CELL_CHERRY) {
@@ -66,7 +65,7 @@ void Game::snakeMoveTo(Position pos) {
 	}
 }
 
-}
+
 
 
 /***
