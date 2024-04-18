@@ -60,7 +60,7 @@ void Game::snakeMoveTo(Position pos) {
 	} else {
 		squares[pos.y][pos.x] = CELL_SNAKE;
 	}
-	if (pos.x < 0 || pos.x >= width || pos.y < 0 || pos.y >= height) {
+	if (pos = CELL_OFF_BOARD) {
         status = GAME_OVER;
         return;
     }
