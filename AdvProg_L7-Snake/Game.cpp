@@ -50,23 +50,20 @@ Game::~Game()
  * 
 ***/
 
-void Game::snakeMoveTo(Position pos) {
-    if (!pos.isInsideBox(0, 0, width, height)) {
+void Game :: snakeMoveTo(Position pos)
+{
+    if(getCellType(pos)==CELL_OF_BOARD || getCellType(pos) == CELL_SNAKE)
+    {
         status = GAME_OVER;
-    } else {
-        // Kiểm tra xem ô cần di chuyển đến có phải là CELL_OFF_BOARD hay không
-        if (squares[pos.y][pos.x] == CELL_OFF_BOARD) {
-            status = GAME_OVER;
-        } else if (squares[pos.y][pos.x] == CELL_CHERRY) {
-            score++;
-            snake.eatCherry();
-            addCherry();
-        }
-
-        // Di chuyển con rắn tới ô mới
-        squares[snake.getHead().y][snake.getHead().x] = CELL_EMPTY; // Đặt ô đầu của con rắn thành CELL_EMPTY trước khi di chuyển
-        snake.move(pos);
-        squares[pos.y][pos.x] = CELL_SNAKE; // Đặt ô mới mà con rắn di chuyển tới thành CELL_SNAKE
+    }
+    else if(getCellType(pos) == CELL_CHERRY)
+    {
+        score++;
+        snake.eatCherry();
+        addCherry();
+    }
+    else{
+        setCellType(pos,CELL_SNAKE);
     }
 }
 
