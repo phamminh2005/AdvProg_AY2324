@@ -32,22 +32,7 @@ Snake::~Snake()
         p = nextNode;
     }
 }
-void Game :: snakeMoveTo(Position pos)
-{
-    if(getCellType(pos)==CELL_OF_BOARD || getCellType(pos) == CELL_SNAKE)
-    {
-        status = GAME_OVER;
-    }
-    else if(getCellType(pos) == CELL_CHERRY)
-    {
-        score++;
-        snake.eatCherry();
-        addCherry();
-    }
-    else{
-        setCellType(pos,CELL_SNAKE);
-    }
-}
+
 
 // DO NOT CHANGE METHOD
 vector<Position> Snake::getPositions() const
