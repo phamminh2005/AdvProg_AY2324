@@ -38,7 +38,7 @@ void Game :: snakeMoveTo(Position pos)
     {
         status = GAME_OVER;
     }
-    else if(getCellType(pos) == CELL-CHERRY)
+    else if(getCellType(pos) == CELL_CHERRY)
     {
         score++;
         snake.eatCherry();
@@ -164,7 +164,7 @@ void Snake::eatCherry()
 
 void Snake::move(Direction direction)
 {
-     Position newPosition = head->position.move(direction);
+    Position newPosition = head->position.move(direction);
     game.snakeMoveTo(newPosition);
     if (game.isGameOver()) 
     {return;}
