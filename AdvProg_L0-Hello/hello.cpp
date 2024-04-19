@@ -1,7 +1,13 @@
-#include <iostream>
-#include "hello.h"
+#include <bits/stdc++.h>
 
-std::string printGameOver(){
-	// TODO: Return the required string
-	return "";
+// Sử dụng namespace riêng
+namespace my_program {
+    int main() {
+        cout << "Minhhhh";
+        return 0;
+    }
+}
+
+int main() {
+    return my_program::main();
 }
